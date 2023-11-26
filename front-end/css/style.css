@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,500&display=swap');
+
+:root{
+    --primary-font: 'Bitter', serif;
+    --font-color: #575767;
+}
+
+body{
+ height: 100vh;
+ display: flex;
+ padding: 64px 35%;
+ flex-direction: column;
+ font-family: var(--primary-font);
+}
+
+.nav__bar{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav__bar > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    align-items: center;
+}
+
+.content__tittle {
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.profile__picture {
+    height: 40px;
+    width: 40px;
+    
+}
+
+.content__notes{
+    color: hsl(240, 8%, 37%);
+    font-size: 16px;
+    font-size: bold;
+}
+
+.line{
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.content__task__list{
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox{
+    border: 5px solid #DADADA;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.task{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+.fa-plus {
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+/* Register page styles ========================================================== */
+
+.content__form{
+    display: flex;
+    gap: 35px;
+    padding: 80px 10%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.content__form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.apresentation{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitle{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+.inputs > input{
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #e2e2ec;
+}
+
+.inputs > input::placeholder{
+    color:  #bcbaba;
+}
+
+.buttons{
+    display: flex;
+}
+
+.buttons > input{
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.div__btn__singUp{
+    align-items: center;
+    display: flex;
+    padding: 0px 30px;
+    justify-content: center;
+    margin-top: -68px;
+}
+
+.btn__signUp {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+}
