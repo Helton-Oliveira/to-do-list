@@ -1,6 +1,6 @@
-import express from 'express';
-import usersRoutes from './usersRoutes.js';
-import tasksRoutes from './tasksRoutes.js';
+const express = require('express');
+const usersRoutes = require('./usersRoutes.js');
+const tasksRoutes = require('./tasksRoutes.js');
 
 
 const router = (app) => {
@@ -14,4 +14,4 @@ const router = (app) => {
     )
 };
 
- export default router;
+module.exports = router;

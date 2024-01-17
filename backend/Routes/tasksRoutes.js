@@ -1,9 +1,11 @@
-import TaskController from '../Controller/TaskController.js';
-import { Router } from 'express';
+const TaskController = require('../Controller/TaskController.js');
+const { Router } = require('express');
 
 const taskController = new TaskController();
 
 const router = Router()
 
 router.get('/user/:id/tasks', (req, res) => taskController.getAllRegisters());
+
+module.exports = router
 

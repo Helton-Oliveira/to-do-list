@@ -1,4 +1,4 @@
-import Services from './services.js'
+const Services = require('./services.js');
 
 class TaskServices extends Services {
     constructor() {

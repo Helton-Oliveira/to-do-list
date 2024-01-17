@@ -1,4 +1,4 @@
-import dbSource from '../database/models';
+const dbSource = require('../database/models');
 
 class Services {
     constructor(model) {
@@ -6,8 +6,28 @@ class Services {
     } 
 
     async getAll() {
-        return  dbSource[this.model].findAll();
+        return dbSource[this.model].findAll();
+    }
+
+    async getOne(where) {
+        return dbSource[this.model].findByPk(where);
+    }
+
+    async createNew(where) {
+        return dbSource[this.model].create({...where});
+    }
+
+    async toUpdate(data, id) {
+        return dbSource[this.model].update(data, {
+            where: { id: id }
+        });
+    }
+
+    async deleting(where) {
+        return dbSource[this.model].destroy({
+            where: { id: where }
+        });
     }
 }
 
-export default Services;
+module.exports = Services;

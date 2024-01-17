@@ -1,5 +1,5 @@
-import Controller from './Controller.js'
-import UserServices from '../Services/UsersServices.js'; 
+const Controller = require('./Controller.js');
+const UserServices = require('../Services/UsersServices.js'); 
 
 const userServices = new UserServices;
 
@@ -9,4 +9,4 @@ class UserController extends Controller {
     }
 }
 
-export default UserController;
+module.exports = UserController;

@@ -1,4 +1,4 @@
-import app from "./backend/app.js";
+const app = require("./backend/app.js");
 
 const PORT = 3500;
 
