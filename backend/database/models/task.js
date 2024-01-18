@@ -6,13 +6,13 @@ module.exports = (sequelize, DataTypes) => {
   class Task extends Model {
     static associate(models) {
       Task.belongsTo(models.User, {  
-        foreignKey: 'id'
+        foreignKey: 'id',
       })
     }
   }
   Task.init({
     name_task: DataTypes.STRING,
-    status: DataTypes.STRING
+    status: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Task',

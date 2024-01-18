@@ -9,10 +9,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      task_id: { 
+      user_id: { 
         allowNull: false, 
+        references: { model: 'users', key: 'id' },
         type: Sequelize.INTEGER,
-        references: { model: 'users', key: 'id' }
       },
       name_task: {
         type: Sequelize.STRING

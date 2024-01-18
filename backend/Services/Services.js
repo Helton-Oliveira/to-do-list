@@ -9,8 +9,8 @@ class Services {
         return dbSource[this.model].findAll();
     }
 
-    async getOne(where) {
-        return dbSource[this.model].findByPk(where);
+    async getOne(id) {
+        return dbSource[this.model].findByPk(id);
     }
 
     async createNew(where) {
