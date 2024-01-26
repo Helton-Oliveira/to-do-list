@@ -5,11 +5,11 @@ const taskController = new TaskController();
 
 const router = Router();
 
-router.get('/tasks', (req, res) => taskController.getAllRegisters(req, res));
-router.get('/tasks/:id', (req, res) => taskController.getOneRegister(req, res));
-router.post('/tasks', (req, res) => taskController.create(req, res));
-router.put('/tasks/:id', (req, res) => taskController.update(req, res));
-router.delete('/tasks/:id', (req, res) => taskController.deleted(req, res));
+router.get('/tasks', taskController.getAllRegisters);
+router.get('/tasks/:id', taskController.getOneRegister);
+router.post('/tasks', taskController.create);
+router.put('/tasks/:id', taskController.update);
+router.delete('/tasks/:id', taskController.deleted);
 
 
 module.exports = router;
