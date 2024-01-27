@@ -16,7 +16,13 @@ module.exports = (sequelize, DataTypes) => {
   User.init({
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: {
+          args: [3, 30], 
+          msg: 'The name field must have at least 3 letters'
+        }
+      }
     },
     cpf: {
       type: DataTypes.TEXT,
@@ -33,19 +39,30 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false  
+      allowNull: false,
+      validate:{
+        isEmail: {
+          args: true,
+          msg: 'invalid email',
+        }
+      },
+      unique: true, 
     },
     password: {
       type: DataTypes.STRING,
       validate: { 
-        is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/
+        is: {
+          args: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/ ,
+          msg: 'Invalid Passowrd'
+        }
        }
     },
   },
   {
     sequelize,
     modelName: 'User',
-    tableName: 'users'
+    tableName: 'users',
+    paranoid: true,
   });
   return User;
 };

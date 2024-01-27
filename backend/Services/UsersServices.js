@@ -10,6 +10,7 @@ class UserServices extends Services {
         const allTasks = await user.getOpenTasks();
         return allTasks;
     }
+
 }
 
 module.exports = UserServices;

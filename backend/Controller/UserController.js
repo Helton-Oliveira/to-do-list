@@ -13,7 +13,6 @@ class UserController extends Controller {
         const listOfTasks = await userServices.getAllTasksPerUser(Number(user_id));
         res.status(200).json(listOfTasks);
     }
-
 }
 
 module.exports = UserController;

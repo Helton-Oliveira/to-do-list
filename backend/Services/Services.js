@@ -17,9 +17,10 @@ class Services {
         return dbSource[this.model].create({...where});
     }
 
-    async toUpdate(data, id) {
+    async toUpdate(data, id, transacao = {}) {
         return dbSource[this.model].update(data, {
-            where: { id: id }
+            where: { id: id },
+            transaction: transacao
         });
     }
 

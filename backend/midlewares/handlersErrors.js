@@ -2,9 +2,6 @@ const BaseError = require('../Errors/BaseError.js');
 const NotFound = require('../Errors/NotFound.js');
 const ValidationsError = require('../Errors/ValidationsError.js');
 const Sequelize = require('sequelize');
-const sequelize = require('sequelize')
-
-
 
 function errorHandler (error, req, res, next) {
     console.log(error);
