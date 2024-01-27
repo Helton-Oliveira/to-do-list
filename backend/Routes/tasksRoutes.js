@@ -6,6 +6,7 @@ const taskController = new TaskController();
 const router = Router();
 
 router.get('/tasks', taskController.getAllRegisters);
+router.get('/tasks/q', taskController.taskTimeQuery);
 router.get('/tasks/:id', taskController.getOneRegister);
 router.post('/tasks', taskController.create);
 router.put('/tasks/:id', taskController.update);
