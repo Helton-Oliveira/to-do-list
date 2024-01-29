@@ -8,7 +8,6 @@ class Controller {
      getAllRegisters = async (req, res, next) => {
         try {
             const all = await this.entityServices.getAll();
-            console.log(this.entityServices)
             res.status(200).json(all);
         } catch (error) {
             console.log(error)
@@ -45,13 +44,14 @@ class Controller {
 
      update = async (req, res, next) => {
         try {
-            const { id } = req.params;
+            const  id  = req.params.id;
             const newData = req.body;
-            const updateData = await this.entityServices.toUpdate( newData, id );
+            const updateData = await this.entityServices.toUpdate(newData, Number(id));
+
 
             if(updateData === null) return res.status(500).json({msg: 'erro ao atualizar usuário'})
 
-            res.status(200).json({msg: 'usuário alterado com sucesso'})
+            return res.status(200).json({msg: 'usuário alterado com sucesso'})
         } catch (error) {
             next(error);
         }

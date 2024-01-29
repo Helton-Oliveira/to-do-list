@@ -1,6 +1,7 @@
 const express = require('express');
 const usersRoutes = require('./usersRoutes.js');
 const tasksRoutes = require('./tasksRoutes.js');
+const categoryRoutes = require('./categoryRoutes.js');
 
 
 const router = (app) => {
@@ -8,6 +9,7 @@ const router = (app) => {
         express.json(),
         usersRoutes,
         tasksRoutes,
+        categoryRoutes,
     )
 };
 

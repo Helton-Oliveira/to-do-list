@@ -13,8 +13,6 @@ class TaskController extends Controller {
         const query = req.query;
         const sucessQuery = await processSearch(query);
 
-        
-
         if(sucessQuery !== null) {
             const tasksByFilter =  await taskServices.searchQuery(sucessQuery)
 

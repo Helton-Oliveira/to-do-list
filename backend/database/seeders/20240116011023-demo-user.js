@@ -11,7 +11,31 @@ module.exports = {
         password: '123456',
         createdAt: new Date(),
         updatedAt: new Date(),
-      }
+      }, 
+      {
+        name: "fernando",
+        cpf: "70824405021",
+        email: "fernando@email.com",
+        password: "123efefASA",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    },
+    {
+        name: "guilherme",
+        cpf: "62647948054",
+        email: "guilherme@email.com",
+        password: "123efefDED",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    },
+    {
+        name: "karla",
+        cpf: "16873626023",
+        email: "karla@email.com",
+        password: "152AAAsss",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    }
     ], {});
     
   },

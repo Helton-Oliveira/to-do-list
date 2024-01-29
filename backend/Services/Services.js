@@ -6,7 +6,7 @@ class Services {
     } 
 
     async getAll() {
-        return dbSource[this.model].findAll();
+        return dbSource[this.model].findAll({limit: 5});
     }
 
     async getOne(id) {
@@ -20,7 +20,6 @@ class Services {
     async toUpdate(data, id, transacao = {}) {
         return dbSource[this.model].update(data, {
             where: { id: id },
-            transaction: transacao
         });
     }
 

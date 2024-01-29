@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       Task.belongsTo(models.User, {  
         foreignKey: 'id',
       })
+      Task.belongsTo(models.Category, {
+        foreignKey: 'category',
+      })
     }
   }
   Task.init({
@@ -16,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Task',
-    tableName: 'tasks'
+    tableName: 'tasks',
   });
   return Task;
 };

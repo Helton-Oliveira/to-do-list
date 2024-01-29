@@ -2,23 +2,16 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tasks', {
+    await queryInterface.createTable('categories', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: { 
-        allowNull: false, 
-        references: { model: 'users', key: 'id' },
-        type: Sequelize.INTEGER,
-      },
-      name_task: {
-        type: Sequelize.STRING
-      },
-      status: {
-        type: Sequelize.STRING
+      category: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +24,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('tasks');
+    await queryInterface.dropTable('categories');
   }
 };
