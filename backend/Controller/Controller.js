@@ -33,6 +33,7 @@ class Controller {
      create = async (req, res, next) => {
         try {
             const data = req.body;
+            console.log(req.body)
             const sucess = await this.entityServices.createNew(data);
 
             res.status(200).json(sucess);

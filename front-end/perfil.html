@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/front-end/css/reset .css">
+    <link rel="stylesheet" href="/front-end/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="menu">
+        <nav class="dynamic_navbar">
+            <i class="fa-solid fa-bars" data-menu="hamburger"></i>
+        </nav>
+    
+        <section class="closed" data-content="content">
+    
+            <div class="info_user">
+                <img src="./images/favicon.png" alt="profile picture" class="profile__picture">
+                <h1 class="user_name">Name</h1>
+            </div>
+    
+            <ul class="categories_list">
+                <li>tarefa 1</li>
+                <li>tarefa 2</li>
+                <li>tarefa 3</li>
+                <li>tarefa 4</li>
+            </ul>
+    
+            <div class="new_category">
+                <input type="text" name="addCategory" id="addCategory" class="add_category" data-category="addCategory" placeholder="Adcionar Categoria "> 
+                <i class="fa-solid fa-plus" data-add="category"></i>
+            </div>
+        </section>
+
+    </header>
+    
+</body>
+
+<script src="./js/dynamicMenu.js"></script>
+</html>

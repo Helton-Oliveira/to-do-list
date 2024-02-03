@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset .css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tarefas da Ka</title>
+</head>
+<body>
+    <div>
+    <header class="menu">
+        <nav class="dynamic_navbar">
+            <i class="fa-solid fa-bars" data-menu="hamburger"></i>
+        </nav>
+    
+        <div class="closed" data-content="content">
+    
+            <div class="info_user">
+                <img src="./images/favicon.png" alt="profile picture" class="profile__picture">
+                <h1 class="user_name">Name</h1>
+            </div>
+    
+            <ul class="categories_list">
+                <li>tarefa 1</li>
+                <li>tarefa 2</li>
+                <li>tarefa 3</li>
+                <li>tarefa 4</li>
+            </ul>
+    
+            <div class="new_category">
+                <input type="text" name="addCategory" id="addCategory" class="add_category" data-category="addCategory" placeholder="Adcionar Categoria "> 
+                <i class="fa-solid fa-plus" data-add="category"></i>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="content__session" data-session="content">
+        <h1 class="category_title">Category</h1>
+        <hr class="line">
+        <div class="content__task__list" data-content="contentTask">
+            <input class="checkbox" type="checkbox" value="check" id="checked"/>
+            <label for="check" class="task">New Task</label>
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    </section>
+</div>
+    
+    <script src="/front-end/js/tasksList.js" type="module"></script>
+    <script src="./js/dynamicMenu.js"></script>
+
+</body>
+</html>

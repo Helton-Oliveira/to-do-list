@@ -6,7 +6,7 @@ class Services {
     } 
 
     async getAll() {
-        return dbSource[this.model].findAll({limit: 5});
+        return dbSource[this.model].findAll();
     }
 
     async getOne(id) {
