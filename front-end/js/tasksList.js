@@ -13,17 +13,11 @@ const tasksUser =  async () => {
         }
     })
 
-    const formatedList = await list.json();
+    const formatedList = await list.json();    
+    sessionStorage.setItem('taskList', JSON.stringify(formatedList));
 
     formatedList.forEach((task) => {
-        divList.innerHTML += `
-        <div class="content__task__list" data-content="contentTask">
-            <input class="checkbox" type="checkbox" value="check" id="checked" data-id="${task.id}"/>
-            <label for="check" class="task" data-${task.id}="">${task['name_task']}</label>
-            <i class="fa-solid fa-plus"></i>
-            </div>
-        <hr class="line" />
-        `
+        showOnScreen(task);
         checkTask();
     })
 }
@@ -59,6 +53,23 @@ const checkTask = () => {
     })
 }
 
+function showOnScreen(task) { 
+
+    const query = {
+        id: task.id,
+        name: task.name_task || task.category
+    }
+
+    divList.innerHTML += `
+        <div class="content__task__list" data-content="contentTask">
+            <input class="checkbox" type="checkbox" value="check" id="checked" data-id="${query.id}"/>
+            <label for="check" class="task" data-${query.id}="">${query.name}</label>
+            <i class="fa-solid fa-plus"></i>
+            </div>
+        <hr class="line" />
+        `;
+}
+
 function markOff(task) {
     task.style.textDecoration = "none";
     task.style.color = "#575767";
@@ -68,6 +79,12 @@ function completeTask(task) {
     task.style.textDecoration = "line-through";
     task.style.color = "#a0a0a0";
 }
+
 tasksUser();
+
+
+export { showOnScreen, checkTask };
+
+
 
 

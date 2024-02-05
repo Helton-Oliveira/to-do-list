@@ -184,6 +184,11 @@ body > div {
     font-size: 25px;
 }
 
+.category_name:hover {
+    background-color: #DADADA;
+    cursor: pointer;
+}
+
 .new_category{
     display: flex;
     margin-top: 100%;

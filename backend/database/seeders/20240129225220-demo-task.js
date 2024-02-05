@@ -5,52 +5,46 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('tasks', [
       {
-      user_id: 1,
-      name_task: 'terminar projeto',
-      status: 'em processo',
-      category:'estudos',
-      createdAt: new Date(),
-      updatedAt: new Date(),
-     },
+        name: 'POO',
+        status: 'em processo',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        category_id: 1,
+      },
      {
-      name_task: "terminar projeto",
+      name: "terminar projeto",
       status: "em processo",
       createdAt: new Date(),
       updatedAt: new Date(),
-      category: "estudos",
-      user_id: 1
+      category_id: 1,
   },
   {
-      name_task: "terminar projeto",
+      name: "projeto API",
       status: "em processo",
       createdAt: new Date(),
       updatedAt: new Date(),
-      category: "'estudos'",
-      user_id: 1
+      category_id: 1,
   },
   {
-      name_task: "busca por categoria",
+      name: "comprar fruta",
       status: 'em processo',
       createdAt: new Date(),
       updatedAt: new Date(),
-      "category": "estudos",
-      "user_id": 1
+      category_id: 2,
   },
   {
-      name_task: "limpar casa",
-      status: "'em processo'",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      category: "casa",
-      user_id: 3
-  },
-  {
-      name_task: "cortar niguiri",
+      name: "limpar casa",
       status: "em processo",
       createdAt: new Date(),
       updatedAt: new Date(),
-      category: "trabalho",
-      user_id: 4
+      category_id: 3,
+  },
+  {
+      name: "cortar niguiri",
+      status: "em processo",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      category_id: 2,
   }], {});
     
   },

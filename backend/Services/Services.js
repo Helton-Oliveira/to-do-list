@@ -28,6 +28,13 @@ class Services {
             where: { id: where }
         });
     }
+
+
+    async searchQuery(where) {
+        return dbSource[this.model].findAll({
+            where: {...where }
+        });
+    }
 }
 
 module.exports = Services;

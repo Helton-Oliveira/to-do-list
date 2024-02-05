@@ -7,11 +7,13 @@ class TaskServices extends Services {
         this.model = 'Task'
     }
 
-    searchQuery = async (where) => {
-        const query = await dbSource[this.model].findAll({
-            where: {...where }});
-
-        return query;
+    getAllTasksPerCategory = async (where) => {
+        return dbSource[this.model].findAll({
+            where: { 
+                category_id: where.category_id,
+                user_id: where.user_id
+             }
+        });
     }
 }
 

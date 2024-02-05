@@ -52,11 +52,12 @@ async function verifyUser() {
     });
 
     const formatedQuery = await query.json();
+
     const user = formatedQuery.find((user) => user['password'] === password);
 
     if(user['name'] === name && user['email'] === email && user['password'] === password && user['cpf'] === cpf) {    
         sessionStorage.setItem('userSession', JSON.stringify(user));
-        window.location.href = './perfil.html' ;
+        window.location.href = './mainContent.html' ;
         return;
     }
 

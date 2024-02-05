@@ -9,9 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      category: {
+      name: {
+        unique: true,
         type: Sequelize.STRING,
         allowNull: false
+      },
+      user_id: {
+        unique: ( ' user_id ' ),
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'users', key: 'id'  }
       },
       createdAt: {
         allowNull: false,

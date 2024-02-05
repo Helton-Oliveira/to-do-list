@@ -16,10 +16,23 @@ class TaskController extends Controller {
         if(sucessQuery !== null) {
             const tasksByFilter =  await taskServices.searchQuery(sucessQuery)
 
-            res.status(200).json({tasksByFilter});
+            res.status(200).json(tasksByFilter);
         } else {
             res.status(200).send([]);
         }
+    } 
+
+    getTaskPerCategory = async (req, res, next) => {
+        const {category_id , user_id} =  req.params;
+
+        const where = {
+            category_id: category_id,
+            user_id: user_id 
+        }
+
+        const query = await taskServices.getAllTasksPerCategory(where);
+
+        res.status(200).json(query);
     }
 }
 
