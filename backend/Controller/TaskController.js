@@ -23,11 +23,10 @@ class TaskController extends Controller {
     } 
 
     getTaskPerCategory = async (req, res, next) => {
-        const {category_id , user_id} =  req.params;
+        const {category_id } =  req.params;
 
         const where = {
             category_id: category_id,
-            user_id: user_id 
         }
 
         const query = await taskServices.getAllTasksPerCategory(where);

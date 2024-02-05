@@ -10,7 +10,7 @@ async function processSearch(search) {
     if(priorTo) query.createdAt[Op.lte] = priorTo;
     if(laterThan) query.createdAt[Op.gte] = laterThan;
 
-    if(category) query.category = category.toLowerCase();
+    if(category) query.name = category.toLowerCase();
 
     if(status) query.status = status
         

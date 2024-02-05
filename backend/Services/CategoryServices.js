@@ -1,4 +1,4 @@
-const Services = require('./services.js');
+const Services = require('./Services.js');
 const dbSource = require('../database/models')
 
 class CategoryServices extends Services {
@@ -7,10 +7,10 @@ class CategoryServices extends Services {
         this.model = 'Category'
     }
 
-    byTask = async (where) => {
-        const category = await dbSource[this.model].findAll({ where: where })
-        return category
-    }
+    // byTask = async (where) => {
+    //     const category = await dbSource[this.model].findAll({ where: where })
+    //     return category
+    // }
 }
 
 module.exports= CategoryServices;

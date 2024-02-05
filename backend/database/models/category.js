@@ -14,10 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Category.init({
-    category:{
+    name:{
       type: DataTypes.STRING,
       unique: true
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: { model: 'users', key: 'id' }
+    }
   }, {
     sequelize,
     modelName: 'Category',

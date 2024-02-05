@@ -1,4 +1,4 @@
-const Services = require('./services.js');
+const Services = require('./Services.js');
 const dbSource = require('../database/models')
 
 class TaskServices extends Services {
@@ -11,7 +11,6 @@ class TaskServices extends Services {
         return dbSource[this.model].findAll({
             where: { 
                 category_id: where.category_id,
-                user_id: where.user_id
              }
         });
     }
