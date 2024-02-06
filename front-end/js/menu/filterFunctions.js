@@ -1,4 +1,5 @@
-import { showOnScreen, checkTask } from "../tasksList.js"
+import { showOnScreen } from "../utils/domManipulatorFunctions.js"
+import { checkTask } from "../utils/eventFunctions.js" 
 
 const addCategory = async(input) => {
 
@@ -20,21 +21,6 @@ const addCategory = async(input) => {
     console.log(query)
 }
 
-const getTaskPerCategory  = async(filter, user) => {
-    const response = await fetch(`http://localhost:3500/tasks/${filter}/${user}`, {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'omit',
-        headers: {
-            "Content-Type": "application/json"
-        },
-    })
 
-    const query = await response.json();
-    query.forEach((item) => {
-        showOnScreen(item);
-    })
-    checkTask();
-}
 
 export { addCategory, getTaskPerCategory };

@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
     }
 
     if(validations.nameValidation(name) && validations.emailValidation(email) && validations.passwordValidation(password)){
-        window.location.href = './index.html' ;
+        window.location.href = './mainContent.html' ;
         cadaster(data);
         return;
     } 

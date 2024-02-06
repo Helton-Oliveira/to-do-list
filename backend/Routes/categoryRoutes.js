@@ -6,6 +6,7 @@ const router = Router();
 
 router.get('/category', categoryController.getAllRegisters);
 router.get('/category/q', categoryController.filterByCategory);
+router.get('/categoryPerUser/:user_id', categoryController.getCategoryPerUser)
 router.get('/category/:id', categoryController.getOneRegister);
 router.post('/category', categoryController.create);
 router.put('/category/:id', categoryController.update);

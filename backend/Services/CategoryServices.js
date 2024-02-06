@@ -7,10 +7,11 @@ class CategoryServices extends Services {
         this.model = 'Category'
     }
 
-    // byTask = async (where) => {
-    //     const category = await dbSource[this.model].findAll({ where: where })
-    //     return category
-    // }
+    getAllCategoriesPerUser = async (where) => {
+        return dbSource[this.model].findAll({
+            where: { user_id: where}
+        })
+    }
 }
 
 module.exports= CategoryServices;

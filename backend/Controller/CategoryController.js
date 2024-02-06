@@ -21,6 +21,12 @@ class CategoryController extends Controller {
             res.status(200).send([]);
         }
     } 
+
+    getCategoryPerUser = async (req, res, next) => {
+        const { user_id } = req.params
+        const categories = await categoryServices.getAllCategoriesPerUser(Number(user_id));
+        res.status(200).json(categories)
+    }
 }
 
 module.exports= CategoryController;
