@@ -27,11 +27,11 @@ function completeTask(task) {
     task.style.color = "#a0a0a0";
 }
 
-function showMenu(element, item) {
+function showMenu(element, item, userId) {
     element.innerHTML += `
     <li class="category_name" data-category="${item.id}">${item.name}</li>
     `
-    filterTaskPerCategory()
+    filterTaskPerCategory(userId)
 }
 
 const showUserInfoMenu = (element, item) => {

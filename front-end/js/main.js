@@ -5,11 +5,12 @@ import { getTasksPerCategory } from './requests/getTasks.js';
 import { openMenu, filterTaskPerCategory } from './utils/eventFunctions.js';
 const categories = JSON.parse(sessionStorage.getItem('categoryList'));
 const divList = document.querySelector('[data-session]');
+const user = JSON.parse(sessionStorage.getItem('userSession'));
 
 
 openMenu(menu, contentMenu);
 categoryByUser();
-getTasksPerCategory(categories, divList);
+getTasksPerCategory(categories, divList, user.id);
 
 
 

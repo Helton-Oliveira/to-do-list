@@ -38,7 +38,7 @@ function openMenu(element, element2) {
     })
 }
 
-const filterTaskPerCategory  = async () => {
+const filterTaskPerCategory  = async (userId) => {
     const divList = document.querySelector('[data-session]');
     const li = document.querySelectorAll('[data-category]');
 
@@ -48,7 +48,8 @@ const filterTaskPerCategory  = async () => {
         event.addEventListener('click', async (e) => {
             divList.innerHTML = ''
             const eventId = e.target.dataset.category
-            const response = await fetch(`http://localhost:3500/tasksByCategories/${eventId}/`, {
+            console.log(eventId)
+            const response = await fetch(`http://localhost:3500/tasksByCategories/${userId}/${eventId}`, {
                 method: 'GET',
                 mode: 'cors',
                 credentials: 'omit',

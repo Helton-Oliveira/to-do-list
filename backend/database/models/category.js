@@ -6,10 +6,12 @@ module.exports = (sequelize, DataTypes) => {
   class Category extends Model {
     static associate(models) {
       Category.belongsTo(models.User, {
-        foreignKey: 'id'
+        foreignKey: 'id',
+        as: 'user'
       })
       Category.hasMany(models.Task, {
         foreignKey: 'id',
+        as: 'tasks'
       })
     }
   }
@@ -25,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Category',
-    tableName: 'categories'
+    tableName: 'categories',
   });
   return Category;
 };

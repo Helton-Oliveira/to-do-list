@@ -1,6 +1,6 @@
-'use strict';
 const { cpfValidation } = require('../../helperFunctions/helperCpf.js');
 
+'use strict';
 const {
   Model
 } = require('sequelize');
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.hasMany(models.Category, {  
         foreignKey: 'user_id',
-        as: 'openCategories'
+        as: 'openCategories',
       })
     }
   }

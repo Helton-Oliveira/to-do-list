@@ -21,7 +21,7 @@ const categoryByUser =  async () => {
     sessionStorage.setItem('categoryList', JSON.stringify(listOfCategory));
 
     listOfCategory.forEach((task) => {
-        showMenu(ul, task);
+        showMenu(ul, task, user.id);
     })
 }
 

@@ -1,11 +1,11 @@
 import { showOnScreen } from "../utils/domManipulatorFunctions.js"; 
 import { checkTask } from "../utils/eventFunctions.js"; 
 
-const getTasksPerCategory = async(categories, element) => {
+const getTasksPerCategory = async(categories, element, userId) => {
     const categoriesId = new Set(categories.map((item) => item.id));
 
-    categoriesId.forEach( async (id) => {
-        const response = await fetch(`http://localhost:3500/tasksByCategories/${id}/`, {
+    categoriesId.forEach( async (categoryId) => {
+        const response = await fetch(`http://localhost:3500/tasksByCategories/${userId}/${categoryId}`, {
             method: 'GET',
             mode: 'cors',
             credentials: 'omit',

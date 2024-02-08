@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Task.belongsTo(models.Category, {
         foreignKey: 'id',
+        as: 'category'
       })
     }
   }
@@ -22,5 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'Task',
     tableName: 'tasks',
   });
+  
   return Task;
 };
