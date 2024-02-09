@@ -1,6 +1,4 @@
 const Services = require('./Services.js');
-const dbSource = require('../database/models');
-const tasks  = require('../database/migrations/20240129011452-create-task.js');
 const Task = require('../database/models/task.js')
 const { Sequelize, QueryTypes } = require('sequelize');
 

@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,500&display=swap');
 
-:root{
+:root {
     --primary-font: 'Bitter', serif;
     --font-color: #575767;
+    --accent-color: #4CAF50; /* Cor de destaque para botões ou elementos importantes */
+    --placeholder-color: #ccc; /* Cor dos placeholders */
+    --background-color: #f8f8f8; /* Cor de fundo mais clara */
+    --container-background: #fff; /* Cor de fundo para containers */
+    --border-color: #DADADA; /* Cor da borda para elementos */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para realce */
 }
 
-body{
- padding: 5% 1%;
- font-family: var(--primary-font);
+body {
+    padding: 5% 1%;
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
 }
 
 body > div {
@@ -17,6 +24,7 @@ body > div {
 .profile__picture {
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 
 .content__session {
@@ -24,39 +32,58 @@ body > div {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
+    max-width: 600px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza na página */
 }
 
-.category_title{
+.category_title {
     font-size: 50px;
     font-weight: bold;
-    color: #575767;
+    color: var(--font-color);
 }
 
-.line{
+.line {
     margin: 10px 0px;
     width: 100%;
 }
 
-.content__task__list{
+.content__task__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    background-color: var(--container-background);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 15px;
 }
 
-.checkbox{
-    border: 5px solid #DADADA;
+.not_add {
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.checkbox {
+    border: 5px solid var(--border-color);
     height: 25px;
     width: 25px;
     cursor: pointer;
 }
 
-.task{
+.task {
     font-size: 18px;
     font-weight: bold;
     color: var(--font-color);
+    flex-grow: 1;
+}
+
+.status {
+    padding: 1%;
+    width: 50%;
+    color: var(--font-color);
+    border-radius: 4px;
 }
 
 .fa-plus {
@@ -64,75 +91,125 @@ body > div {
     cursor: pointer;
 }
 
-/* Register page styles ========================================================== */
+/* ... (código da página de registro) ... */
 
-.content__form{
+.content__form {
     display: flex;
+    flex-direction: column;
     gap: 35px;
     padding: 80px 10%;
     width: 100%;
-    flex-direction: column;
+    max-width: 600px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza na página */
 }
 
-.content__form > div {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.apresentation{
+.apresentation {
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 
-.subtitle{
+.subtitle {
     font-size: 18px;
     font-weight: bold;
     color: var(--font-color);
 }
 
-.inputs > input{
+.inputs > input {
     width: 100%;
     border-radius: 8px;
-    padding: 10px;
-    background-color: #e2e2ec;
+    padding: 15px;
+    background-color: var(--container-background);
+    border: 1px solid var(--border-color);
 }
 
-.inputs > input::placeholder{
-    color:  #bcbaba;
+.inputs > input::placeholder {
+    color: var(--placeholder-color);
 }
 
-.buttons{
+.buttons {
     display: flex;
+    gap: 15px;
 }
 
-.buttons > input{
+.buttons > input {
     color: #fff;
-    background-color: #000;
+    background-color: var(--accent-color);
     font-weight: bold;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     font-size: 15px;
     cursor: pointer;
+    flex-grow: 1;
 }
 
-.div__btn__singUp{
+.div__btn__singUp {
     align-items: center;
     display: flex;
-    padding: 0px 30px;
     justify-content: center;
-    margin-top: -68px;
+    margin-top: -68px; 
 }
 
 .btn__signUp {
     color: #fff;
-    background-color: #000;
+    background-color: var(--accent-color);
     font-weight: bold;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     font-size: 15px;
     cursor: pointer;
+    margin-top: 50px;
+    width: 50%;
+   
+}
+
+/* ... (código da página de registro) ... */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    justify-content: center;
+    display: flex;
+    gap: 150px;
+}
+
+.btn_addTask {
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.form__add__task {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--container-background);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.new__task,
+.new__status {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    color: var(--font-color);
+}
+
+.new__task::placeholder,
+.new__status::placeholder {
+    color: var(--placeholder-color);
 }
 
 /* dynamic menu styles ========================================================== */
@@ -149,7 +226,7 @@ body > div {
     flex-direction: column;
 }
 
-.closed{
+.closed {
     transition: 2s;
     width: 100%;
     margin-left: -120%;
@@ -161,7 +238,7 @@ body > div {
     z-index: 1;
 }
 
-.fa-bars{
+.fa-bars {
     cursor: pointer;
     font-size: 200%;
 }
@@ -182,6 +259,7 @@ body > div {
     flex-direction: column;
     gap: 15px;
     font-size: 25px;
+    overflow: hidden;
 }
 
 .category_name:hover {
@@ -189,7 +267,7 @@ body > div {
     cursor: pointer;
 }
 
-.new_category{
+.new_category {
     display: flex;
     margin-top: 100%;
     align-items: center;
@@ -200,3 +278,53 @@ body > div {
     width: 100%;
     height: 10%;
 }
+
+/* Estilos de responsividade */
+
+@media screen and (max-width: 768px) {
+    .content__form {
+        padding: 40px 5%;
+    }
+    
+    .content__session {
+        gap: 30px;
+    }
+
+    .btn__signUp {
+        color: #fff;
+        background-color: var(--accent-color);
+        font-weight: bold;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .menu {
+        padding: 0;
+    }
+
+    .closed {
+        width: 100%;
+        margin-left: -100px;
+    }
+
+    .active{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .dynamic_navbar {
+        gap: 15px;
+    }
+
+    .info_user {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .categories_list {
+        font-size: 20px;
+    }
+}
+

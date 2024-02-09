@@ -1,4 +1,4 @@
-import { markOff, completeTask, showOnScreen } from "./domManipulatorFunctions.js"; 
+import { markOff, completeTask, showOnScreen, titleHandler, createNewTaskCamps } from "./domManipulatorFunctions.js"; 
 
 const checkTask = () => {
     const checkbox = document.querySelectorAll('#checked');
@@ -46,7 +46,7 @@ const filterTaskPerCategory  = async (userId) => {
 
     li.forEach((event) => {
         event.addEventListener('click', async (e) => {
-            divList.innerHTML = ''
+            titleHandler(divList, e);
             const eventId = e.target.dataset.category
             console.log(eventId)
             const response = await fetch(`http://localhost:3500/tasksByCategories/${userId}/${eventId}`, {
@@ -59,12 +59,81 @@ const filterTaskPerCategory  = async (userId) => {
             })
         
             const query = await response.json();
-            query.forEach((item) => {
-                showOnScreen(divList, item);
-            })
-            checkTask();
+
+            if(query.length !== 0){
+                query.forEach((item) => {
+                    showOnScreen(divList, item);
+                })
+                checkTask();
+                createNewTaskCamps();
+                addTask(eventId)
+            } else {
+                showOnScreen(divList);
+                createNewTaskCamps();
+                addTask(eventId);
+            }
         })
     })
 }
 
-export { checkTask, openMenu, filterTaskPerCategory };
+const addCategory = (userId) => {
+    const newCategoryText = document.querySelector('[data-addCategory]');
+    const btnAddCategory = document.querySelector('[data-add]')
+    
+    btnAddCategory.addEventListener('click', async() => {
+        const newCategory = {
+            name: newCategoryText.value,
+            user_id: userId
+        }
+        const response = await fetch('http://localhost:3500/category/ ' ,{
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'omit',
+            headers: {
+                "Content-Type": "application/json"
+            },
+           body: JSON.stringify(newCategory)
+        })
+        const sucess = await response.json();
+        console.log(sucess)
+    })
+}
+
+const addTask = (categoryId) => {
+    const btnAddTask = document.querySelector('[data-addTask]')  ;
+    const newTaskText = document.querySelector('#addTask' ) 
+    const newStatusText = document.querySelector('#statusTask') 
+    
+    btnAddTask.addEventListener('click', async(e) => {
+        
+        const newTask = {
+            name: newTaskText.value,
+            status: newStatusText.value,
+            category_id: categoryId
+        }
+
+        console.log(newTask);
+
+        const response = await fetch('http://localhost:3500/tasks', {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'omit',
+            headers: {
+                "Content-Type": "application/json"
+            },
+           body: JSON.stringify(newTask)
+        })
+    })
+
+}
+
+// const nextPageForCreateTask = (element) => {
+//     element.addEventListener('click', () => {
+//         window.location.href = './perfil.html' ;
+//     })
+// }
+
+
+export { checkTask, openMenu, filterTaskPerCategory, addCategory, addTask };
+
+
