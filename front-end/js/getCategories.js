@@ -1,8 +1,8 @@
 const ul = document.querySelector('[data-list]');
-import { showMenu } from './utils/domManipulatorFunctions.js';
+import { showMenu, showUserInfoMenu } from './utils/domManipulatorFunctions.js';
 const infoUserMenu = document.querySelector('[data-user]');
 const user = JSON.parse(sessionStorage.getItem('userSession'));
-import { showUserInfoMenu } from './utils/domManipulatorFunctions.js';
+import { removeCategory } from './utils/eventFunctions.js';
 
 const categoryByUser =  async () => {
 
@@ -23,6 +23,7 @@ const categoryByUser =  async () => {
     listOfCategory.forEach((task) => {
         showMenu(ul, task, user.id);
     })
+    removeCategory();
 }
 
 

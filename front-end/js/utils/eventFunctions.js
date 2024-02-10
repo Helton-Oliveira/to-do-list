@@ -127,13 +127,28 @@ const addTask = (categoryId) => {
 
 }
 
-// const nextPageForCreateTask = (element) => {
-//     element.addEventListener('click', () => {
-//         window.location.href = './perfil.html' ;
-//     })
-// }
+const removeCategory = () => {
+    const btnRemove = document.querySelectorAll('[data-removeCat]');
+
+    btnRemove.forEach((element) => {
+        element.addEventListener('click', async (e) => {
+            const eventId = e.target.dataset.removecat;
+    
+            const response = await fetch(`http://localhost:3500/category/${eventId}`, {
+                method: 'DELETE',
+                mode: 'cors',
+                credentials: 'omit',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+
+            const deleted = await response.json()
+        })
+    })
+}
 
 
-export { checkTask, openMenu, filterTaskPerCategory, addCategory, addTask };
+export { checkTask, openMenu, filterTaskPerCategory, addCategory, addTask, removeCategory };
 
 

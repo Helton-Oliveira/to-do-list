@@ -262,7 +262,7 @@ body > div {
     overflow: hidden;
 }
 
-.category_name:hover {
+.ul_div:hover {
     background-color: #DADADA;
     cursor: pointer;
 }
@@ -277,6 +277,16 @@ body > div {
     padding: 1%;
     width: 100%;
     height: 10%;
+}
+
+.ul_div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.fa-regular{
+    color: #f8f8f8;
 }
 
 /* Estilos de responsividade */

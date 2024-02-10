@@ -36,7 +36,10 @@ function completeTask(task) {
 
 function showMenu(element, item, userId) {
     element.innerHTML += `
-    <li class="category_name" data-category="${item.id}">${item.name}</li>
+    <div class="ul_div" data-ulDiv="">
+        <li class="category_name" data-category="${item.id}">${item.name}</li>
+        <i class="fa-regular fa-trash-can" data-removeCat="${item.id}"></i>
+    </div>
     `
     filterTaskPerCategory(userId)
 }
